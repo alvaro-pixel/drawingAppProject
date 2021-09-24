@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="lib/p5.min.js"></script>
+        <!--p5.dom is a library that lets us do stuff with divs from html/css-->
+        <script src="lib/p5.dom.js"></script>
+        <script src="sketch.js"></script>
+        <!-- add extra scripts below -->
+        <script src="toolbox.js"></script>
+        <script src="colourPalette.js"></script>
+        <script src="helperFunctions.js"></script>
+        <!--This are the tools we see on the left bar -->
+        <script src="freehandTool.js"></script>
+        <script src="lineToTool.js"></script>
+        <script src="mirrorDrawTool.js"></script>
+        <script src="sprayCanTool.js"></script>
+        <script src="EllipseTool.js"></script>
+        <script src="RectangleTool.js"></script>
+        <script src="StampTool.js"></script>
+        <script src="TextTool.js"></script>
+        <script src="ShapeTool.js"></script>
+        <script src="EraserTool.js"></script>
+        <script src="UploadTool.js"></script>
+        <script src="PenTool.js"></script>
+        <!--Typography-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <!--dis div basically shows title and adds two buttons(clear,save)-->
+            <div class="box header">
+                Draw App
+                <button id="clearButton">Clear
+                    <img
+                    src="assets/clear.svg"
+                    width="20"
+                    height="20"
+                    alt="clear"
+                >
+                </button>
+                <button id="saveImageButton"> Save
+                    <img
+                        src="assets/disk.svg"
+                        width="20"
+                        height="20"
+                        alt="disk"
+                    >
+                </button>
+            </div>
+            <!--container where we store our tools-->
+            <div class="box" id="sidebar">
+                <div class="pencil width"></div>
+            </div>
+            <!--content is actually where we draw on the canvas-->
+            <div id="content"></div>
+            <!--this div stores the array of colour palettes-->
+            <div class="box colourPalette"></div>
+            <!--this container stores a 'make horizontal' button-->
+            <div class="box options">
+                <div id="place-for-mirror"></div>                            
+
+                <!--Where Stamp options get selected and populated-->
+                <div id="Numstars">Number</div>
+                <div id="Starsize">Size</div>
+                <div id="stampSelect"></div>
+                <!--Where Upload options get selected and populated-->
+                <div id="uploadButton"></div>
+                <!--Where Editshape tool buttons get selected -->
+                <button id="Finish-Shape">Finish Shape</button>
+                <button id="Edit-Shape">Edit Shape</button>
+                <!--Where Inputfield for text tool gets selected-->
+                <button id="Print-Text">Print Text</button>
+                <div id="Font-Size">Font Size:</div>
+                <div id="Font-Menu">Font Menu:</div>
+                <!--Where adding and removing points from Pentool gets selected-->
+                <button id="close-button">Close Shape</button>
+                <!--Wher user inputs initial bezier values for Pentool-->
+                <div id="bezier-controls">
+                    <!-- First control point -->
+                    <div id="first-control-point">
+                        <p>Control Point Down:</p>
+                        <input
+                            type="range"
+                            min="1"
+                            max="2000"
+                            value="500"
+                            class="slider"
+                            id="X2"
+                        >
+                        <input
+                            type="range"
+                            min="1"
+                            max="2000"
+                            value="400"
+                            class="slider"
+                            id="Y2"
+                        >
+                    </div>
+                    <!-- second control point -->
+                    <div id="second-control-point">
+                        <p>Control Point Up:</p>
+                        <input
+                            type="range"
+                            min="1"
+                            max="2000"
+                            value="600"
+                            class="slider"
+                            id="X3"
+                        >
+                        <input
+                            type="range"
+                            min="1"
+                            max="2000"
+                            value="200"
+                            class="slider"
+                            id="Y3"
+                        >
+                    </div>
+                    <!-- second anchor point -->
+                    <div id="anchor-point">
+                        <p>Anchor Point Left:</p>
+                        <input
+                            type="range"
+                            min="-1000"
+                            max="2000"
+                            value="100"
+                            class="slider"
+                            id="X4"
+                        >
+                        <input
+                            type="range"
+                            min="-1000"
+                            max="2000"
+                            value="150"
+                            class="slider"
+                            id="Y4"
+                        >
+                    </div>
+                    <!-- first anchor point -->
+                    <div id="first-anchor-point">
+                        <p>Anchor Point Right:</p>
+                        <input
+                            type="range"
+                            min="1"
+                            max="2000"
+                            value="900"
+                            class="slider"
+                            id="X1"
+                        >
+                        <input
+                            type="range"
+                            min="1"
+                            max="2000"
+                            value="150"
+                            class="slider"
+                            id="Y1"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

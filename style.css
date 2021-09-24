@@ -1,0 +1,198 @@
+/*Styles for overall app UI*/
+
+html, body {
+	margin: 0px;
+	height: 100%;
+}
+
+p {
+	font-size: 18px;
+}
+
+#sidebar {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background: #393538;
+	align-content: center;
+}
+
+#content {
+	grid-area: content;
+	font-family: 'Nunito', sans-serif;
+}
+
+.header {
+	grid-area: header;
+	font-family: Helvetica, sans-serif;
+	background: #131415;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+.sideBarItem {
+	max-height: 25px;
+	max-width: 25px;
+	padding: 5%;
+	margin-top: 10%;
+}
+
+.sideBarItem img {
+	max-height: 25px;
+	max-Width: 25px;
+}
+
+.colourPalette {
+	grid-area: colourP;
+	display: flex;
+	flex-direction: grid;
+	flex-flow: wrap;
+}
+
+.options {
+	grid-area: options;
+	padding: 15px;
+	display: flex;
+}
+
+.colourSwatches {
+	box-sizing: border-box;
+	width: 40px;
+	height: 40px;
+	max-height: 40px;
+	max-width: 40px;
+	margin: 5px;
+	border-radius: 10px;
+}
+
+.wrapper {
+	display: grid;
+	height: 100%;
+	grid-template-columns: 70px 230px minmax(500px, 1fr);
+	grid-template-rows: 35px minmax(500px, 1fr) 160px;
+	grid-template-areas: "header header header" "sidebar content content" "colourP colourP options";
+	background-color: #fff;
+	color: #444;
+}
+
+.box {
+	background-color: #212121;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 18px;
+}
+
+
+.box header {
+	box-shadow: 5px 2px 15px 5px rgba(0, 0, 0, 0.17);
+}
+
+/*Styles for text tool controls*/
+
+#fontSize {
+	display: none;
+}
+
+/*Styles for shape tool buttons*/
+
+#Finish-Shape {
+	display: none;
+	height: 30px;
+	margin-right: 2%;
+	width: 100px;
+}
+
+#Edit-Shape {
+	display: none;
+	height: 30px;
+	width: 100px;
+}
+
+/*Styles for stamp tool buttons*/
+
+#Numstars {
+	display: none;
+}
+
+#Starsize {
+	display: none;
+}
+
+#stampSelect select {
+	appearance: none;
+	width: 150px;
+	background-color: white;
+	font-size: 1.25rem;
+	font-family: 'nunito';
+	border: none;
+	padding: 0 0.5em 0 0;
+	border-radius: 2%;
+}
+
+/* Styles for text tool */
+
+#Input {
+	display: none;
+}
+
+#text-input {
+	background-color: rgba(0, 0, 0, 0.05);
+	color: #777777;
+	font-size: 12pt;
+	border-width: 0px;
+	width: 10%
+}
+
+#Print-Text {
+	display: none;
+	height: 30px;
+	width: 100px;
+	margin-right: 10px
+}
+
+#Font-Size {
+	display: none;
+	margin-right: 100px;
+}
+
+#Font-Menu {
+	display: none;
+}
+
+/*Styles for Pen tool buttons*/
+
+#close-button {
+	display: none;
+	height: auto;
+	overflow-wrap: normal;
+	width: auto;
+	height: 50px;
+	margin-right: 2%;
+	padding: 1%;
+}
+
+#close-button {
+	border-style: none;
+	border-radius: 5%;
+}
+
+
+/*Input value for initial bezier curve */
+
+#X1, #Y1, #X2, #Y2, #X3, #Y3, #X4, #Y4 {
+	height: 30px;
+	width: 150px;
+	font-size: 10px;
+	
+}
+
+#bezier-controls {
+	display: none;
+	font-size: 14px;
+}
+
+#bezier-controls p {
+	font-size: 14px;
+}
